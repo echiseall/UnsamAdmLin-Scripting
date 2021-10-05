@@ -1,0 +1,12 @@
+#!/bin/bash
+
+HASH=$(sha256sum $1)
+
+while [ "$HASH" != 00* ]
+do
+	echo "$HASH"
+	HASH=$(sha256sum $1)
+done
+
+
+echo "$HASH"
